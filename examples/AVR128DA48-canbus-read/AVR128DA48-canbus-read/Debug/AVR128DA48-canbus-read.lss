@@ -1,0 +1,1141 @@
+
+AVR128DA48-canbus-read.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00804000  00804000  00000616  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000005a2  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000019  00804000  00804000  00000616  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000616  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000648  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000e0  00000000  00000000  00000688  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000047c7  00000000  00000000  00000768  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00002ef8  00000000  00000000  00004f2f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000b1e  00000000  00000000  00007e27  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000298  00000000  00000000  00008948  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00001dab  00000000  00000000  00008be0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000cca  00000000  00000000  0000a98b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000c0  00000000  00000000  0000b655  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 7d 00 	jmp	0xfa	; 0xfa <__ctors_end>
+   4:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+   8:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+   c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  10:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  14:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  18:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  1c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  20:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  24:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  28:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  2c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  30:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  34:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  38:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  3c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  40:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  44:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  48:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  4c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  50:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  54:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  58:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  5c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  60:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  64:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  68:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  6c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  70:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  74:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  78:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  7c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  80:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  84:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  88:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  8c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  90:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  94:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  98:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  9c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  a0:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  a4:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  a8:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  ac:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  b0:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  b4:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  b8:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  bc:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  c0:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  c4:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  c8:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  cc:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  d0:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  d4:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  d8:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  dc:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  e0:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  e4:	0c 94 8f 00 	jmp	0x11e	; 0x11e <__bad_interrupt>
+  e8:	f4 01       	movw	r30, r8
+  ea:	18 02       	muls	r17, r24
+  ec:	f8 01       	movw	r30, r16
+  ee:	fc 01       	movw	r30, r24
+  f0:	00 02       	muls	r16, r16
+  f2:	04 02       	muls	r16, r20
+  f4:	08 02       	muls	r16, r24
+  f6:	0c 02       	muls	r16, r28
+  f8:	10 02       	muls	r17, r16
+
+000000fa <__ctors_end>:
+  fa:	11 24       	eor	r1, r1
+  fc:	1f be       	out	0x3f, r1	; 63
+  fe:	cf ef       	ldi	r28, 0xFF	; 255
+ 100:	cd bf       	out	0x3d, r28	; 61
+ 102:	df e7       	ldi	r29, 0x7F	; 127
+ 104:	de bf       	out	0x3e, r29	; 62
+
+00000106 <__do_clear_bss>:
+ 106:	20 e4       	ldi	r18, 0x40	; 64
+ 108:	a0 e0       	ldi	r26, 0x00	; 0
+ 10a:	b0 e4       	ldi	r27, 0x40	; 64
+ 10c:	01 c0       	rjmp	.+2      	; 0x110 <.do_clear_bss_start>
+
+0000010e <.do_clear_bss_loop>:
+ 10e:	1d 92       	st	X+, r1
+
+00000110 <.do_clear_bss_start>:
+ 110:	a9 31       	cpi	r26, 0x19	; 25
+ 112:	b2 07       	cpc	r27, r18
+ 114:	e1 f7       	brne	.-8      	; 0x10e <.do_clear_bss_loop>
+ 116:	0e 94 c1 02 	call	0x582	; 0x582 <main>
+ 11a:	0c 94 cf 02 	jmp	0x59e	; 0x59e <_exit>
+
+0000011e <__bad_interrupt>:
+ 11e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000122 <_ZN11MCP2515_CAN9_spi_initEP11PORT_struct>:
+	
+	//load message into TXBn buffer and request to send
+	_mcp_loadtxbn(n, msg);
+	_mcp_rtsn(n);
+	return n;
+}
+ 122:	fb 01       	movw	r30, r22
+ 124:	80 ed       	ldi	r24, 0xD0	; 208
+ 126:	81 83       	std	Z+1, r24	; 0x01
+ 128:	84 81       	ldd	r24, Z+4	; 0x04
+ 12a:	80 68       	ori	r24, 0x80	; 128
+ 12c:	84 83       	std	Z+4, r24	; 0x04
+ 12e:	80 e2       	ldi	r24, 0x20	; 32
+ 130:	82 83       	std	Z+2, r24	; 0x02
+ 132:	e0 e4       	ldi	r30, 0x40	; 64
+ 134:	f9 e0       	ldi	r31, 0x09	; 9
+ 136:	80 e3       	ldi	r24, 0x30	; 48
+ 138:	80 83       	st	Z, r24
+ 13a:	11 82       	std	Z+1, r1	; 0x01
+ 13c:	80 81       	ld	r24, Z
+ 13e:	81 60       	ori	r24, 0x01	; 1
+ 140:	80 83       	st	Z, r24
+ 142:	08 95       	ret
+
+00000144 <_ZN11MCP2515_CAN9_spi_openEv>:
+ 144:	e0 e0       	ldi	r30, 0x00	; 0
+ 146:	f4 e0       	ldi	r31, 0x04	; 4
+ 148:	84 81       	ldd	r24, Z+4	; 0x04
+ 14a:	8f 77       	andi	r24, 0x7F	; 127
+ 14c:	84 83       	std	Z+4, r24	; 0x04
+ 14e:	08 95       	ret
+
+00000150 <_ZN11MCP2515_CAN10_spi_closeEv>:
+ 150:	e0 e0       	ldi	r30, 0x00	; 0
+ 152:	f4 e0       	ldi	r31, 0x04	; 4
+ 154:	84 81       	ldd	r24, Z+4	; 0x04
+ 156:	80 68       	ori	r24, 0x80	; 128
+ 158:	84 83       	std	Z+4, r24	; 0x04
+ 15a:	08 95       	ret
+
+0000015c <_ZN11MCP2515_CAN10_spi_writeEh>:
+ 15c:	60 93 44 09 	sts	0x0944, r22	; 0x800944 <__TEXT_REGION_LENGTH__+0x7e0944>
+ 160:	80 91 43 09 	lds	r24, 0x0943	; 0x800943 <__TEXT_REGION_LENGTH__+0x7e0943>
+ 164:	88 23       	and	r24, r24
+ 166:	e4 f7       	brge	.-8      	; 0x160 <_ZN11MCP2515_CAN10_spi_writeEh+0x4>
+ 168:	80 91 44 09 	lds	r24, 0x0944	; 0x800944 <__TEXT_REGION_LENGTH__+0x7e0944>
+ 16c:	08 95       	ret
+
+0000016e <_ZN11MCP2515_CAN10_mcp_resetEv>:
+ 16e:	cf 93       	push	r28
+ 170:	df 93       	push	r29
+ 172:	ec 01       	movw	r28, r24
+ 174:	0e 94 a2 00 	call	0x144	; 0x144 <_ZN11MCP2515_CAN9_spi_openEv>
+ 178:	60 ec       	ldi	r22, 0xC0	; 192
+ 17a:	ce 01       	movw	r24, r28
+ 17c:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 180:	ce 01       	movw	r24, r28
+ 182:	0e 94 a8 00 	call	0x150	; 0x150 <_ZN11MCP2515_CAN10_spi_closeEv>
+ 186:	df 91       	pop	r29
+ 188:	cf 91       	pop	r28
+ 18a:	08 95       	ret
+
+0000018c <_ZN11MCP2515_CAN16_mcp_read_statusEv>:
+ 18c:	1f 93       	push	r17
+ 18e:	cf 93       	push	r28
+ 190:	df 93       	push	r29
+ 192:	ec 01       	movw	r28, r24
+ 194:	0e 94 a2 00 	call	0x144	; 0x144 <_ZN11MCP2515_CAN9_spi_openEv>
+ 198:	60 ea       	ldi	r22, 0xA0	; 160
+ 19a:	ce 01       	movw	r24, r28
+ 19c:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 1a0:	60 e0       	ldi	r22, 0x00	; 0
+ 1a2:	ce 01       	movw	r24, r28
+ 1a4:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 1a8:	18 2f       	mov	r17, r24
+ 1aa:	ce 01       	movw	r24, r28
+ 1ac:	0e 94 a8 00 	call	0x150	; 0x150 <_ZN11MCP2515_CAN10_spi_closeEv>
+ 1b0:	81 2f       	mov	r24, r17
+ 1b2:	df 91       	pop	r29
+ 1b4:	cf 91       	pop	r28
+ 1b6:	1f 91       	pop	r17
+ 1b8:	08 95       	ret
+
+000001ba <_ZN11MCP2515_CAN10_mpc_writeEhh>:
+ 1ba:	0f 93       	push	r16
+ 1bc:	1f 93       	push	r17
+ 1be:	cf 93       	push	r28
+ 1c0:	df 93       	push	r29
+ 1c2:	ec 01       	movw	r28, r24
+ 1c4:	06 2f       	mov	r16, r22
+ 1c6:	14 2f       	mov	r17, r20
+ 1c8:	0e 94 a2 00 	call	0x144	; 0x144 <_ZN11MCP2515_CAN9_spi_openEv>
+ 1cc:	62 e0       	ldi	r22, 0x02	; 2
+ 1ce:	ce 01       	movw	r24, r28
+ 1d0:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 1d4:	60 2f       	mov	r22, r16
+ 1d6:	ce 01       	movw	r24, r28
+ 1d8:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 1dc:	61 2f       	mov	r22, r17
+ 1de:	ce 01       	movw	r24, r28
+ 1e0:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 1e4:	ce 01       	movw	r24, r28
+ 1e6:	0e 94 a8 00 	call	0x150	; 0x150 <_ZN11MCP2515_CAN10_spi_closeEv>
+ 1ea:	df 91       	pop	r29
+ 1ec:	cf 91       	pop	r28
+ 1ee:	1f 91       	pop	r17
+ 1f0:	0f 91       	pop	r16
+ 1f2:	08 95       	ret
+
+000001f4 <_ZN11MCP2515_CAN9_mcp_readEh>:
+ 1f4:	1f 93       	push	r17
+ 1f6:	cf 93       	push	r28
+ 1f8:	df 93       	push	r29
+ 1fa:	ec 01       	movw	r28, r24
+ 1fc:	16 2f       	mov	r17, r22
+ 1fe:	0e 94 a2 00 	call	0x144	; 0x144 <_ZN11MCP2515_CAN9_spi_openEv>
+ 202:	63 e0       	ldi	r22, 0x03	; 3
+ 204:	ce 01       	movw	r24, r28
+ 206:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 20a:	61 2f       	mov	r22, r17
+ 20c:	ce 01       	movw	r24, r28
+ 20e:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 212:	60 e0       	ldi	r22, 0x00	; 0
+ 214:	ce 01       	movw	r24, r28
+ 216:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 21a:	18 2f       	mov	r17, r24
+ 21c:	ce 01       	movw	r24, r28
+ 21e:	0e 94 a8 00 	call	0x150	; 0x150 <_ZN11MCP2515_CAN10_spi_closeEv>
+ 222:	81 2f       	mov	r24, r17
+ 224:	df 91       	pop	r29
+ 226:	cf 91       	pop	r28
+ 228:	1f 91       	pop	r17
+ 22a:	08 95       	ret
+
+0000022c <_ZN11MCP2515_CAN13_mcp_rxstatusEv>:
+ 22c:	1f 93       	push	r17
+ 22e:	cf 93       	push	r28
+ 230:	df 93       	push	r29
+ 232:	ec 01       	movw	r28, r24
+ 234:	0e 94 a2 00 	call	0x144	; 0x144 <_ZN11MCP2515_CAN9_spi_openEv>
+ 238:	60 eb       	ldi	r22, 0xB0	; 176
+ 23a:	ce 01       	movw	r24, r28
+ 23c:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 240:	60 e0       	ldi	r22, 0x00	; 0
+ 242:	ce 01       	movw	r24, r28
+ 244:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 248:	18 2f       	mov	r17, r24
+ 24a:	ce 01       	movw	r24, r28
+ 24c:	0e 94 a8 00 	call	0x150	; 0x150 <_ZN11MCP2515_CAN10_spi_closeEv>
+ 250:	81 2f       	mov	r24, r17
+ 252:	df 91       	pop	r29
+ 254:	cf 91       	pop	r28
+ 256:	1f 91       	pop	r17
+ 258:	08 95       	ret
+
+0000025a <_ZN11MCP2515_CAN13_mcp_readrxbnEh>:
+ 25a:	0f 93       	push	r16
+ 25c:	1f 93       	push	r17
+ 25e:	cf 93       	push	r28
+ 260:	df 93       	push	r29
+ 262:	8c 01       	movw	r16, r24
+ 264:	c6 2f       	mov	r28, r22
+ 266:	0e 94 a2 00 	call	0x144	; 0x144 <_ZN11MCP2515_CAN9_spi_openEv>
+ 26a:	c1 30       	cpi	r28, 0x01	; 1
+ 26c:	39 f4       	brne	.+14     	; 0x27c <_ZN11MCP2515_CAN13_mcp_readrxbnEh+0x22>
+ 26e:	64 e9       	ldi	r22, 0x94	; 148
+ 270:	c8 01       	movw	r24, r16
+ 272:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 276:	c0 e0       	ldi	r28, 0x00	; 0
+ 278:	d0 e0       	ldi	r29, 0x00	; 0
+ 27a:	05 c0       	rjmp	.+10     	; 0x286 <_ZN11MCP2515_CAN13_mcp_readrxbnEh+0x2c>
+ 27c:	60 e9       	ldi	r22, 0x90	; 144
+ 27e:	c8 01       	movw	r24, r16
+ 280:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 284:	f8 cf       	rjmp	.-16     	; 0x276 <_ZN11MCP2515_CAN13_mcp_readrxbnEh+0x1c>
+ 286:	cd 30       	cpi	r28, 0x0D	; 13
+ 288:	d1 05       	cpc	r29, r1
+ 28a:	54 f4       	brge	.+20     	; 0x2a0 <_ZN11MCP2515_CAN13_mcp_readrxbnEh+0x46>
+ 28c:	60 e0       	ldi	r22, 0x00	; 0
+ 28e:	c8 01       	movw	r24, r16
+ 290:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+ 294:	fe 01       	movw	r30, r28
+ 296:	e0 50       	subi	r30, 0x00	; 0
+ 298:	f0 4c       	sbci	r31, 0xC0	; 192
+ 29a:	80 83       	st	Z, r24
+ 29c:	21 96       	adiw	r28, 0x01	; 1
+ 29e:	f3 cf       	rjmp	.-26     	; 0x286 <_ZN11MCP2515_CAN13_mcp_readrxbnEh+0x2c>
+ 2a0:	80 e0       	ldi	r24, 0x00	; 0
+ 2a2:	90 e4       	ldi	r25, 0x40	; 64
+ 2a4:	df 91       	pop	r29
+ 2a6:	cf 91       	pop	r28
+ 2a8:	1f 91       	pop	r17
+ 2aa:	0f 91       	pop	r16
+ 2ac:	08 95       	ret
+
+000002ae <_ZN11MCP2515_CAN9availableEv>:
+
+uint8_t MCP2515_CAN::available()
+{
+	uint8_t rxstatus = _mcp_rxstatus();
+ 2ae:	0e 94 16 01 	call	0x22c	; 0x22c <_ZN11MCP2515_CAN13_mcp_rxstatusEv>
+	uint8_t n = (rxstatus >> 6) & 0x03;
+	return n;
+}
+ 2b2:	82 95       	swap	r24
+ 2b4:	86 95       	lsr	r24
+ 2b6:	86 95       	lsr	r24
+ 2b8:	83 70       	andi	r24, 0x03	; 3
+ 2ba:	08 95       	ret
+
+000002bc <_ZN11MCP2515_CAN11readMessageEv>:
+
+can_msg MCP2515_CAN::readMessage()
+{
+ 2bc:	0f 93       	push	r16
+ 2be:	1f 93       	push	r17
+ 2c0:	cf 93       	push	r28
+ 2c2:	df 93       	push	r29
+ 2c4:	ec 01       	movw	r28, r24
+ 2c6:	8b 01       	movw	r16, r22
+	can_msg msg;
+	uint8_t* rxbn;
+	
+	//check which buffer is full an ready to read
+	uint8_t status = _mcp_read_status();
+ 2c8:	cb 01       	movw	r24, r22
+ 2ca:	0e 94 c6 00 	call	0x18c	; 0x18c <_ZN11MCP2515_CAN16_mcp_read_statusEv>
+	if (status & MCP2515_STATUS_TX0IF_bm)
+ 2ce:	83 ff       	sbrs	r24, 3
+ 2d0:	06 c0       	rjmp	.+12     	; 0x2de <_ZN11MCP2515_CAN11readMessageEv+0x22>
+		rxbn = _mcp_readrxbn(0);
+ 2d2:	60 e0       	ldi	r22, 0x00	; 0
+ 2d4:	c8 01       	movw	r24, r16
+ 2d6:	0e 94 2d 01 	call	0x25a	; 0x25a <_ZN11MCP2515_CAN13_mcp_readrxbnEh>
+ 2da:	dc 01       	movw	r26, r24
+ 2dc:	07 c0       	rjmp	.+14     	; 0x2ec <_ZN11MCP2515_CAN11readMessageEv+0x30>
+	
+	else if (status & MCP2515_STATUS_TX1IF_bm)
+ 2de:	85 ff       	sbrs	r24, 5
+ 2e0:	2d c0       	rjmp	.+90     	; 0x33c <_ZN11MCP2515_CAN11readMessageEv+0x80>
+		rxbn = _mcp_readrxbn(1);
+ 2e2:	61 e0       	ldi	r22, 0x01	; 1
+ 2e4:	c8 01       	movw	r24, r16
+ 2e6:	0e 94 2d 01 	call	0x25a	; 0x25a <_ZN11MCP2515_CAN13_mcp_readrxbnEh>
+ 2ea:	dc 01       	movw	r26, r24
+		
+	else
+		return msg;
+	
+	//extract the ID
+	msg.id = (rxbn[0] << 3) | ((rxbn[1] & RXBnSIDL_SID_gc) >> 5);
+ 2ec:	8c 91       	ld	r24, X
+ 2ee:	90 e0       	ldi	r25, 0x00	; 0
+ 2f0:	88 0f       	add	r24, r24
+ 2f2:	99 1f       	adc	r25, r25
+ 2f4:	88 0f       	add	r24, r24
+ 2f6:	99 1f       	adc	r25, r25
+ 2f8:	88 0f       	add	r24, r24
+ 2fa:	99 1f       	adc	r25, r25
+ 2fc:	11 96       	adiw	r26, 0x01	; 1
+ 2fe:	2c 91       	ld	r18, X
+ 300:	11 97       	sbiw	r26, 0x01	; 1
+ 302:	22 95       	swap	r18
+ 304:	26 95       	lsr	r18
+ 306:	27 70       	andi	r18, 0x07	; 7
+ 308:	82 2b       	or	r24, r18
+ 30a:	88 83       	st	Y, r24
+ 30c:	99 83       	std	Y+1, r25	; 0x01
+
+	//extract data length
+	msg.len = rxbn[4] & RXBnDLC_DLC_gc;  // DLC is the lower 4 bits of frame[4]
+ 30e:	14 96       	adiw	r26, 0x04	; 4
+ 310:	6c 91       	ld	r22, X
+ 312:	14 97       	sbiw	r26, 0x04	; 4
+ 314:	6f 70       	andi	r22, 0x0F	; 15
+ 316:	6a 83       	std	Y+2, r22	; 0x02
+
+	// Extract data
+	for (int i = 0; i < msg.len; i++) 
+ 318:	20 e0       	ldi	r18, 0x00	; 0
+ 31a:	30 e0       	ldi	r19, 0x00	; 0
+ 31c:	46 2f       	mov	r20, r22
+ 31e:	50 e0       	ldi	r21, 0x00	; 0
+ 320:	24 17       	cp	r18, r20
+ 322:	35 07       	cpc	r19, r21
+ 324:	5c f4       	brge	.+22     	; 0x33c <_ZN11MCP2515_CAN11readMessageEv+0x80>
+	{
+		msg.data[i] = rxbn[5 + i];
+ 326:	fd 01       	movw	r30, r26
+ 328:	e2 0f       	add	r30, r18
+ 32a:	f3 1f       	adc	r31, r19
+ 32c:	95 81       	ldd	r25, Z+5	; 0x05
+ 32e:	fe 01       	movw	r30, r28
+ 330:	e2 0f       	add	r30, r18
+ 332:	f3 1f       	adc	r31, r19
+ 334:	93 83       	std	Z+3, r25	; 0x03
+
+	//extract data length
+	msg.len = rxbn[4] & RXBnDLC_DLC_gc;  // DLC is the lower 4 bits of frame[4]
+
+	// Extract data
+	for (int i = 0; i < msg.len; i++) 
+ 336:	2f 5f       	subi	r18, 0xFF	; 255
+ 338:	3f 4f       	sbci	r19, 0xFF	; 255
+ 33a:	f0 cf       	rjmp	.-32     	; 0x31c <_ZN11MCP2515_CAN11readMessageEv+0x60>
+	{
+		msg.data[i] = rxbn[5 + i];
+	}
+
+	return msg;
+}
+ 33c:	ce 01       	movw	r24, r28
+ 33e:	df 91       	pop	r29
+ 340:	cf 91       	pop	r28
+ 342:	1f 91       	pop	r17
+ 344:	0f 91       	pop	r16
+ 346:	08 95       	ret
+
+00000348 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t>:
+
+MCP2515_MODE_t MCP2515_CAN::setMode(MCP2515_MODE_t mode)
+{
+ 348:	cf 93       	push	r28
+ 34a:	df 93       	push	r29
+ 34c:	ec 01       	movw	r28, r24
+	//see MCP2515 Documentation page 60, REGISTER 10-1
+	uint8_t configuration;
+	switch (mode)
+ 34e:	62 30       	cpi	r22, 0x02	; 2
+ 350:	69 f0       	breq	.+26     	; 0x36c <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x24>
+ 352:	28 f4       	brcc	.+10     	; 0x35e <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x16>
+ 354:	66 23       	and	r22, r22
+ 356:	81 f0       	breq	.+32     	; 0x378 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x30>
+ 358:	61 30       	cpi	r22, 0x01	; 1
+ 35a:	31 f0       	breq	.+12     	; 0x368 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x20>
+ 35c:	0e c0       	rjmp	.+28     	; 0x37a <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x32>
+ 35e:	63 30       	cpi	r22, 0x03	; 3
+ 360:	39 f0       	breq	.+14     	; 0x370 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x28>
+ 362:	64 30       	cpi	r22, 0x04	; 4
+ 364:	39 f0       	breq	.+14     	; 0x374 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x2c>
+ 366:	09 c0       	rjmp	.+18     	; 0x37a <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x32>
+		case MCP2515_MODE_CONFIG:
+		configuration = CANCTRL_REQOP_CONFIG_gc | CANCTRL_OSM_bm; //CANCTRL REQOP to 000, and CANCTRL OCM to 1 (one shot mode, can bus will attempt to send a message only once)
+		break;
+		
+		case MCP2515_MODE_NORMAL:
+		configuration = CANCTRL_REQOP_NORMAL_gc | CANCTRL_OSM_bm;
+ 368:	48 e0       	ldi	r20, 0x08	; 8
+		break;
+ 36a:	07 c0       	rjmp	.+14     	; 0x37a <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x32>
+		
+		case MCP2515_MODE_SLEEP:
+		configuration = CANCTRL_REQOP_SLEEP_gc | CANCTRL_OSM_bm;
+ 36c:	48 e2       	ldi	r20, 0x28	; 40
+		break;
+ 36e:	05 c0       	rjmp	.+10     	; 0x37a <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x32>
+		
+		case MCP2515_MODE_LISTENONLY:
+		configuration = CANCTRL_REQOP_LISTENONLY_gc | CANCTRL_OSM_bm;
+ 370:	48 e6       	ldi	r20, 0x68	; 104
+		break;
+ 372:	03 c0       	rjmp	.+6      	; 0x37a <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x32>
+		
+		case MCP2515_MODE_LOOPBACK:
+		configuration = CANCTRL_REQOP_LOOPBACK_gc | CANCTRL_OSM_bm;
+ 374:	48 e4       	ldi	r20, 0x48	; 72
+		break;
+ 376:	01 c0       	rjmp	.+2      	; 0x37a <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x32>
+	//see MCP2515 Documentation page 60, REGISTER 10-1
+	uint8_t configuration;
+	switch (mode)
+	{
+		case MCP2515_MODE_CONFIG:
+		configuration = CANCTRL_REQOP_CONFIG_gc | CANCTRL_OSM_bm; //CANCTRL REQOP to 000, and CANCTRL OCM to 1 (one shot mode, can bus will attempt to send a message only once)
+ 378:	48 e8       	ldi	r20, 0x88	; 136
+		// Handle invalid mode case
+		break;
+	}
+	
+	//write configuration
+	_mpc_write(MCP2515_REGISTER_CANCTRL, configuration);
+ 37a:	6f e0       	ldi	r22, 0x0F	; 15
+ 37c:	ce 01       	movw	r24, r28
+ 37e:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN11MCP2515_CAN10_mpc_writeEhh>
+	_spi_write(0);
+ 382:	60 e0       	ldi	r22, 0x00	; 0
+ 384:	ce 01       	movw	r24, r28
+ 386:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+	
+	//check can status register to confirm mode
+	uint8_t data = _mcp_read(MCP2515_REGISTER_CANSTAT);
+ 38a:	6e e0       	ldi	r22, 0x0E	; 14
+ 38c:	ce 01       	movw	r24, r28
+ 38e:	0e 94 fa 00 	call	0x1f4	; 0x1f4 <_ZN11MCP2515_CAN9_mcp_readEh>
+	
+	switch (data & 0b11100000)
+ 392:	80 7e       	andi	r24, 0xE0	; 224
+ 394:	80 34       	cpi	r24, 0x40	; 64
+ 396:	69 f0       	breq	.+26     	; 0x3b2 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x6a>
+ 398:	28 f4       	brcc	.+10     	; 0x3a4 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x5c>
+ 39a:	88 23       	and	r24, r24
+ 39c:	41 f0       	breq	.+16     	; 0x3ae <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x66>
+ 39e:	80 32       	cpi	r24, 0x20	; 32
+ 3a0:	81 f0       	breq	.+32     	; 0x3c2 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x7a>
+ 3a2:	0d c0       	rjmp	.+26     	; 0x3be <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x76>
+ 3a4:	80 36       	cpi	r24, 0x60	; 96
+ 3a6:	39 f0       	breq	.+14     	; 0x3b6 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x6e>
+ 3a8:	80 38       	cpi	r24, 0x80	; 128
+ 3aa:	39 f0       	breq	.+14     	; 0x3ba <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x72>
+ 3ac:	08 c0       	rjmp	.+16     	; 0x3be <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x76>
+	{
+		case CANCTRL_REQOP_NORMAL_gc:
+		return MCP2515_MODE_NORMAL;
+ 3ae:	81 e0       	ldi	r24, 0x01	; 1
+ 3b0:	09 c0       	rjmp	.+18     	; 0x3c4 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x7c>
+		
+		case CANCTRL_REQOP_SLEEP_gc:
+		return MCP2515_MODE_SLEEP;
+		
+		case CANCTRL_REQOP_LOOPBACK_gc:
+		return MCP2515_MODE_LOOPBACK;
+ 3b2:	84 e0       	ldi	r24, 0x04	; 4
+ 3b4:	07 c0       	rjmp	.+14     	; 0x3c4 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x7c>
+		
+		case CANCTRL_REQOP_LISTENONLY_gc:
+		return MCP2515_MODE_LISTENONLY;
+ 3b6:	83 e0       	ldi	r24, 0x03	; 3
+ 3b8:	05 c0       	rjmp	.+10     	; 0x3c4 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x7c>
+		
+		case CANCTRL_REQOP_CONFIG_gc:
+		return MCP2515_MODE_CONFIG;
+ 3ba:	80 e0       	ldi	r24, 0x00	; 0
+ 3bc:	03 c0       	rjmp	.+6      	; 0x3c4 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x7c>
+		
+		default:
+		return static_cast<MCP2515_MODE_t>(-1);
+ 3be:	8f ef       	ldi	r24, 0xFF	; 255
+ 3c0:	01 c0       	rjmp	.+2      	; 0x3c4 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t+0x7c>
+	{
+		case CANCTRL_REQOP_NORMAL_gc:
+		return MCP2515_MODE_NORMAL;
+		
+		case CANCTRL_REQOP_SLEEP_gc:
+		return MCP2515_MODE_SLEEP;
+ 3c2:	82 e0       	ldi	r24, 0x02	; 2
+		
+		default:
+		return static_cast<MCP2515_MODE_t>(-1);
+	}
+	
+}
+ 3c4:	df 91       	pop	r29
+ 3c6:	cf 91       	pop	r28
+ 3c8:	08 95       	ret
+
+000003ca <_ZN11MCP2515_CAN10setBitrateE13CAN_BITRATE_t>:
+
+void MCP2515_CAN::setBitrate(CAN_BITRATE_t bitrate)
+{
+ 3ca:	0f 93       	push	r16
+ 3cc:	1f 93       	push	r17
+ 3ce:	cf 93       	push	r28
+ 3d0:	df 93       	push	r29
+ 3d2:	ec 01       	movw	r28, r24
+	uint8_t cnf1, cnf2, cnf3;
+	
+	switch (bitrate)
+ 3d4:	86 2f       	mov	r24, r22
+ 3d6:	90 e0       	ldi	r25, 0x00	; 0
+ 3d8:	89 30       	cpi	r24, 0x09	; 9
+ 3da:	91 05       	cpc	r25, r1
+ 3dc:	28 f5       	brcc	.+74     	; 0x428 <__LOCK_REGION_LENGTH__+0x28>
+ 3de:	fc 01       	movw	r30, r24
+ 3e0:	ec 58       	subi	r30, 0x8C	; 140
+ 3e2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 3e4:	0c 94 c6 02 	jmp	0x58c	; 0x58c <__tablejump2__>
+	{
+		case CAN_50kbps:
+		cnf1 = 0x03;
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+ 3e8:	16 e8       	ldi	r17, 0x86	; 134
+	
+	switch (bitrate)
+	{
+		case CAN_50kbps:
+		cnf1 = 0x03;
+		cnf2 = 0xB4;
+ 3ea:	04 eb       	ldi	r16, 0xB4	; 180
+	uint8_t cnf1, cnf2, cnf3;
+	
+	switch (bitrate)
+	{
+		case CAN_50kbps:
+		cnf1 = 0x03;
+ 3ec:	43 e0       	ldi	r20, 0x03	; 3
+ 3ee:	23 c0       	rjmp	.+70     	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
+		break;
+		
+		case CAN_95kbps:
+		cnf1 = 0x01;
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+ 3f0:	16 e8       	ldi	r17, 0x86	; 134
+		cnf3 = 0x85;
+		break;
+		
+		case CAN_95kbps:
+		cnf1 = 0x01;
+		cnf2 = 0xB4;
+ 3f2:	04 eb       	ldi	r16, 0xB4	; 180
+		cnf2 = 0xE2;
+		cnf3 = 0x85;
+		break;
+		
+		case CAN_95kbps:
+		cnf1 = 0x01;
+ 3f4:	41 e0       	ldi	r20, 0x01	; 1
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+		break;
+ 3f6:	1f c0       	rjmp	.+62     	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
+		
+		case CAN_100kbps:
+		cnf1 = 0x01;
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+ 3f8:	16 e8       	ldi	r17, 0x86	; 134
+		cnf3 = 0x86;
+		break;
+		
+		case CAN_100kbps:
+		cnf1 = 0x01;
+		cnf2 = 0xB4;
+ 3fa:	04 eb       	ldi	r16, 0xB4	; 180
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+		break;
+		
+		case CAN_100kbps:
+		cnf1 = 0x01;
+ 3fc:	41 e0       	ldi	r20, 0x01	; 1
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+		break;
+ 3fe:	1b c0       	rjmp	.+54     	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
+		
+		case CAN_125kbps:
+		cnf1 = 0x01;
+		cnf2 = 0xB1;
+		cnf3 = 0x85;
+ 400:	15 e8       	ldi	r17, 0x85	; 133
+		cnf3 = 0x86;
+		break;
+		
+		case CAN_125kbps:
+		cnf1 = 0x01;
+		cnf2 = 0xB1;
+ 402:	01 eb       	ldi	r16, 0xB1	; 177
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+		break;
+		
+		case CAN_125kbps:
+		cnf1 = 0x01;
+ 404:	41 e0       	ldi	r20, 0x01	; 1
+		cnf2 = 0xB1;
+		cnf3 = 0x85;
+		break;
+ 406:	17 c0       	rjmp	.+46     	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
+		
+		case CAN_200kbps:
+		cnf1 = 0x00;
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+ 408:	16 e8       	ldi	r17, 0x86	; 134
+		cnf3 = 0x85;
+		break;
+		
+		case CAN_200kbps:
+		cnf1 = 0x00;
+		cnf2 = 0xB4;
+ 40a:	04 eb       	ldi	r16, 0xB4	; 180
+		cnf2 = 0xB1;
+		cnf3 = 0x85;
+		break;
+		
+		case CAN_200kbps:
+		cnf1 = 0x00;
+ 40c:	40 e0       	ldi	r20, 0x00	; 0
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+		break;
+ 40e:	13 c0       	rjmp	.+38     	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
+		
+		case CAN_250kbps:
+		cnf1 = 0x00;
+		cnf2 = 0xB1;
+		cnf3 = 0x85;
+ 410:	15 e8       	ldi	r17, 0x85	; 133
+		cnf3 = 0x86;
+		break;
+		
+		case CAN_250kbps:
+		cnf1 = 0x00;
+		cnf2 = 0xB1;
+ 412:	01 eb       	ldi	r16, 0xB1	; 177
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+		break;
+		
+		case CAN_250kbps:
+		cnf1 = 0x00;
+ 414:	40 e0       	ldi	r20, 0x00	; 0
+		cnf2 = 0xB1;
+		cnf3 = 0x85;
+		break;
+ 416:	0f c0       	rjmp	.+30     	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
+		
+		case CAN_500kbps:
+		cnf1 = 0x00;
+		cnf2 = 0x90;
+		cnf3 = 0x82;
+ 418:	12 e8       	ldi	r17, 0x82	; 130
+		cnf3 = 0x85;
+		break;
+		
+		case CAN_500kbps:
+		cnf1 = 0x00;
+		cnf2 = 0x90;
+ 41a:	00 e9       	ldi	r16, 0x90	; 144
+		cnf2 = 0xB1;
+		cnf3 = 0x85;
+		break;
+		
+		case CAN_500kbps:
+		cnf1 = 0x00;
+ 41c:	40 e0       	ldi	r20, 0x00	; 0
+		cnf2 = 0x90;
+		cnf3 = 0x82;
+		break;
+ 41e:	0b c0       	rjmp	.+22     	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
+		
+		case CAN_1000kbps:
+		cnf1 = 0x00;
+		cnf2 = 0x80;
+		cnf3 = 0x80;
+ 420:	10 e8       	ldi	r17, 0x80	; 128
+		cnf3 = 0x82;
+		break;
+		
+		case CAN_1000kbps:
+		cnf1 = 0x00;
+		cnf2 = 0x80;
+ 422:	00 e8       	ldi	r16, 0x80	; 128
+		cnf2 = 0x90;
+		cnf3 = 0x82;
+		break;
+		
+		case CAN_1000kbps:
+		cnf1 = 0x00;
+ 424:	40 e0       	ldi	r20, 0x00	; 0
+		cnf2 = 0x80;
+		cnf3 = 0x80;
+		break;
+ 426:	07 c0       	rjmp	.+14     	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
+		
+		default:
+		// Handle invalid bitrate case
+		cnf1 = 0xFF;
+		cnf2 = 0xFF;
+		cnf3 = 0xFF;
+ 428:	1f ef       	ldi	r17, 0xFF	; 255
+		break;
+		
+		default:
+		// Handle invalid bitrate case
+		cnf1 = 0xFF;
+		cnf2 = 0xFF;
+ 42a:	0f ef       	ldi	r16, 0xFF	; 255
+		cnf3 = 0x80;
+		break;
+		
+		default:
+		// Handle invalid bitrate case
+		cnf1 = 0xFF;
+ 42c:	4f ef       	ldi	r20, 0xFF	; 255
+		cnf2 = 0xFF;
+		cnf3 = 0xFF;
+		break;
+ 42e:	03 c0       	rjmp	.+6      	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
+		break;
+		
+		case CAN_83k3bps:
+		cnf1 = 0x47;
+		cnf2 = 0xE2;
+		cnf3 = 0x85;
+ 430:	15 e8       	ldi	r17, 0x85	; 133
+		cnf3 = 0x86;
+		break;
+		
+		case CAN_83k3bps:
+		cnf1 = 0x47;
+		cnf2 = 0xE2;
+ 432:	02 ee       	ldi	r16, 0xE2	; 226
+		cnf2 = 0xB4;
+		cnf3 = 0x86;
+		break;
+		
+		case CAN_83k3bps:
+		cnf1 = 0x47;
+ 434:	47 e4       	ldi	r20, 0x47	; 71
+		cnf2 = 0xFF;
+		cnf3 = 0xFF;
+		break;
+	}
+	
+	_mpc_write(MCP2515_REGISTER_CNF1, cnf1);
+ 436:	6a e2       	ldi	r22, 0x2A	; 42
+ 438:	ce 01       	movw	r24, r28
+ 43a:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN11MCP2515_CAN10_mpc_writeEhh>
+	_mpc_write(MCP2515_REGISTER_CNF2, cnf2);
+ 43e:	40 2f       	mov	r20, r16
+ 440:	69 e2       	ldi	r22, 0x29	; 41
+ 442:	ce 01       	movw	r24, r28
+ 444:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN11MCP2515_CAN10_mpc_writeEhh>
+	_mpc_write(MCP2515_REGISTER_CNF3, cnf3);
+ 448:	41 2f       	mov	r20, r17
+ 44a:	68 e2       	ldi	r22, 0x28	; 40
+ 44c:	ce 01       	movw	r24, r28
+ 44e:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN11MCP2515_CAN10_mpc_writeEhh>
+	
+}
+ 452:	df 91       	pop	r29
+ 454:	cf 91       	pop	r28
+ 456:	1f 91       	pop	r17
+ 458:	0f 91       	pop	r16
+ 45a:	08 95       	ret
+
+0000045c <_ZN11MCP2515_CAN5beginE13CAN_BITRATE_t>:
+
+
+//MCP2515 initialization and setup functions. Functions for sending and receiving messages
+//____________________________________________________________________________________________________
+bool MCP2515_CAN::begin(CAN_BITRATE_t can_speed)
+{
+ 45c:	1f 93       	push	r17
+ 45e:	cf 93       	push	r28
+ 460:	df 93       	push	r29
+ 462:	ec 01       	movw	r28, r24
+ 464:	16 2f       	mov	r17, r22
+	//initialise SPI peripheral
+	_spi_init(SPI_PORT);
+ 466:	60 e0       	ldi	r22, 0x00	; 0
+ 468:	74 e0       	ldi	r23, 0x04	; 4
+ 46a:	0e 94 91 00 	call	0x122	; 0x122 <_ZN11MCP2515_CAN9_spi_initEP11PORT_struct>
+	
+	//send dummy message to ensure first transmission which sets the INTFLAGS
+	_spi_open();
+ 46e:	ce 01       	movw	r24, r28
+ 470:	0e 94 a2 00 	call	0x144	; 0x144 <_ZN11MCP2515_CAN9_spi_openEv>
+	_spi_write(0);
+ 474:	60 e0       	ldi	r22, 0x00	; 0
+ 476:	ce 01       	movw	r24, r28
+ 478:	0e 94 ae 00 	call	0x15c	; 0x15c <_ZN11MCP2515_CAN10_spi_writeEh>
+	_spi_close();
+ 47c:	ce 01       	movw	r24, r28
+ 47e:	0e 94 a8 00 	call	0x150	; 0x150 <_ZN11MCP2515_CAN10_spi_closeEv>
+	
+	//reset the MCP2515 device
+	_mcp_reset();
+ 482:	ce 01       	movw	r24, r28
+ 484:	0e 94 b7 00 	call	0x16e	; 0x16e <_ZN11MCP2515_CAN10_mcp_resetEv>
+	
+	//initialize the MCP2515
+	//MCP2515 starts in configuration mode. The CNF1, CNF2, CNF3, filters and masks are only configurable in this mode.
+	setBitrate(can_speed);
+ 488:	61 2f       	mov	r22, r17
+ 48a:	ce 01       	movw	r24, r28
+ 48c:	0e 94 e5 01 	call	0x3ca	; 0x3ca <_ZN11MCP2515_CAN10setBitrateE13CAN_BITRATE_t>
+	
+	//start the MCP2515 by setting it in normal mode and return true if mode is set successfully
+	MCP2515_MODE_t mode = setMode(MCP2515_MODE_NORMAL);
+ 490:	61 e0       	ldi	r22, 0x01	; 1
+ 492:	ce 01       	movw	r24, r28
+ 494:	0e 94 a4 01 	call	0x348	; 0x348 <_ZN11MCP2515_CAN7setModeE14MCP2515_MODE_t>
+	if (mode == MCP2515_MODE_NORMAL)
+ 498:	81 30       	cpi	r24, 0x01	; 1
+ 49a:	09 f0       	breq	.+2      	; 0x49e <_ZN11MCP2515_CAN5beginE13CAN_BITRATE_t+0x42>
+		return true;
+	
+	return false;
+ 49c:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 49e:	df 91       	pop	r29
+ 4a0:	cf 91       	pop	r28
+ 4a2:	1f 91       	pop	r17
+ 4a4:	08 95       	ret
+
+000004a6 <_Z5setupv>:
+
+
+//Setup
+//____________________________________________________________________________________________________
+void setup()
+{
+ 4a6:	cf 93       	push	r28
+ 4a8:	df 93       	push	r29
+	//Clock configurations
+	CCP = CCP_IOREG_gc;								//unlock protected register
+ 4aa:	88 ed       	ldi	r24, 0xD8	; 216
+ 4ac:	84 bf       	out	0x34, r24	; 52
+	CLKCTRL.MCLKCTRLA = CLKCTRL_CLKSEL_OSCHF_gc;	// Select high-frequency internal oscillator
+ 4ae:	e0 e6       	ldi	r30, 0x60	; 96
+ 4b0:	f0 e0       	ldi	r31, 0x00	; 0
+ 4b2:	10 82       	st	Z, r1
+	
+	CCP = CCP_IOREG_gc; 
+ 4b4:	84 bf       	out	0x34, r24	; 52
+	CLKCTRL.MCLKCTRLB &= ~CLKCTRL_PEN_bm;			// disable clock division
+ 4b6:	91 81       	ldd	r25, Z+1	; 0x01
+ 4b8:	9e 7f       	andi	r25, 0xFE	; 254
+ 4ba:	91 83       	std	Z+1, r25	; 0x01
+		
+	CCP = CCP_IOREG_gc; 
+ 4bc:	84 bf       	out	0x34, r24	; 52
+	CLKCTRL.OSCHFCTRLA = CLKCTRL_FRQSEL_16M_gc;		// Set clock frequency to 16 MHz
+ 4be:	8c e1       	ldi	r24, 0x1C	; 28
+ 4c0:	80 87       	std	Z+8, r24	; 0x08
+	
+	
+	
+	// PIN configuration and setup
+	PORTC.DIRSET = LED_PIN;
+ 4c2:	c0 e4       	ldi	r28, 0x40	; 64
+ 4c4:	d4 e0       	ldi	r29, 0x04	; 4
+ 4c6:	80 e4       	ldi	r24, 0x40	; 64
+ 4c8:	89 83       	std	Y+1, r24	; 0x01
+	PORTC.OUT |= PIN6_bm;
+ 4ca:	8c 81       	ldd	r24, Y+4	; 0x04
+ 4cc:	80 64       	ori	r24, 0x40	; 64
+ 4ce:	8c 83       	std	Y+4, r24	; 0x04
+	
+	
+	
+	//CAN bus setup
+	can.begin(CAN_125kbps);
+ 4d0:	64 e0       	ldi	r22, 0x04	; 4
+ 4d2:	88 e1       	ldi	r24, 0x18	; 24
+ 4d4:	90 e4       	ldi	r25, 0x40	; 64
+ 4d6:	0e 94 2e 02 	call	0x45c	; 0x45c <_ZN11MCP2515_CAN5beginE13CAN_BITRATE_t>
+	
+	message.id = 0x00BE;
+ 4da:	ed e0       	ldi	r30, 0x0D	; 13
+ 4dc:	f0 e4       	ldi	r31, 0x40	; 64
+ 4de:	8e eb       	ldi	r24, 0xBE	; 190
+ 4e0:	90 e0       	ldi	r25, 0x00	; 0
+ 4e2:	80 83       	st	Z, r24
+ 4e4:	91 83       	std	Z+1, r25	; 0x01
+	message.len = 8;
+ 4e6:	88 e0       	ldi	r24, 0x08	; 8
+ 4e8:	82 83       	std	Z+2, r24	; 0x02
+	message.data[0] = 0x01;
+ 4ea:	91 e0       	ldi	r25, 0x01	; 1
+ 4ec:	93 83       	std	Z+3, r25	; 0x03
+	message.data[1] = 0x02;
+ 4ee:	92 e0       	ldi	r25, 0x02	; 2
+ 4f0:	94 83       	std	Z+4, r25	; 0x04
+	message.data[2] = 0x03;
+ 4f2:	93 e0       	ldi	r25, 0x03	; 3
+ 4f4:	95 83       	std	Z+5, r25	; 0x05
+	message.data[3] = 0x04;
+ 4f6:	94 e0       	ldi	r25, 0x04	; 4
+ 4f8:	96 83       	std	Z+6, r25	; 0x06
+	message.data[4] = 0x05;
+ 4fa:	95 e0       	ldi	r25, 0x05	; 5
+ 4fc:	97 83       	std	Z+7, r25	; 0x07
+	message.data[5] = 0x06;
+ 4fe:	96 e0       	ldi	r25, 0x06	; 6
+ 500:	90 87       	std	Z+8, r25	; 0x08
+	message.data[6] = 0x07;
+ 502:	97 e0       	ldi	r25, 0x07	; 7
+ 504:	91 87       	std	Z+9, r25	; 0x09
+	message.data[7] = 0x08;
+ 506:	82 87       	std	Z+10, r24	; 0x0a
+	
+	
+	
+	//setup complete
+	PORTC.OUT &= ~PIN6_bm;
+ 508:	8c 81       	ldd	r24, Y+4	; 0x04
+ 50a:	8f 7b       	andi	r24, 0xBF	; 191
+ 50c:	8c 83       	std	Y+4, r24	; 0x04
+	
+}
+ 50e:	df 91       	pop	r29
+ 510:	cf 91       	pop	r28
+ 512:	08 95       	ret
+
+00000514 <_Z4loopv>:
+
+
+//Main loop
+//____________________________________________________________________________________________________
+void loop()
+{
+ 514:	cf 93       	push	r28
+ 516:	df 93       	push	r29
+ 518:	cd b7       	in	r28, 0x3d	; 61
+ 51a:	de b7       	in	r29, 0x3e	; 62
+ 51c:	2b 97       	sbiw	r28, 0x0b	; 11
+ 51e:	cd bf       	out	0x3d, r28	; 61
+ 520:	de bf       	out	0x3e, r29	; 62
+	
+	//Check if there are any messages available in the MCP2515 buffer
+	if(can.available() > 0)
+ 522:	88 e1       	ldi	r24, 0x18	; 24
+ 524:	90 e4       	ldi	r25, 0x40	; 64
+ 526:	0e 94 57 01 	call	0x2ae	; 0x2ae <_ZN11MCP2515_CAN9availableEv>
+ 52a:	88 23       	and	r24, r24
+ 52c:	d9 f0       	breq	.+54     	; 0x564 <_Z4loopv+0x50>
+	{
+		//read the message
+		message = can.readMessage();
+ 52e:	68 e1       	ldi	r22, 0x18	; 24
+ 530:	70 e4       	ldi	r23, 0x40	; 64
+ 532:	ce 01       	movw	r24, r28
+ 534:	01 96       	adiw	r24, 0x01	; 1
+ 536:	0e 94 5e 01 	call	0x2bc	; 0x2bc <_ZN11MCP2515_CAN11readMessageEv>
+ 53a:	8b e0       	ldi	r24, 0x0B	; 11
+ 53c:	fe 01       	movw	r30, r28
+ 53e:	31 96       	adiw	r30, 0x01	; 1
+ 540:	ad e0       	ldi	r26, 0x0D	; 13
+ 542:	b0 e4       	ldi	r27, 0x40	; 64
+ 544:	01 90       	ld	r0, Z+
+ 546:	0d 92       	st	X+, r0
+ 548:	8a 95       	dec	r24
+ 54a:	e1 f7       	brne	.-8      	; 0x544 <_Z4loopv+0x30>
+		
+		//toggle the LED if a message was recieved from a node with address 0x00AB
+		if(message.id == 0x00AB)
+ 54c:	80 91 0d 40 	lds	r24, 0x400D	; 0x80400d <message>
+ 550:	90 91 0e 40 	lds	r25, 0x400E	; 0x80400e <message+0x1>
+ 554:	8b 3a       	cpi	r24, 0xAB	; 171
+ 556:	91 05       	cpc	r25, r1
+ 558:	29 f4       	brne	.+10     	; 0x564 <_Z4loopv+0x50>
+			PORTC.OUTTGL |= PIN6_bm;
+ 55a:	e0 e4       	ldi	r30, 0x40	; 64
+ 55c:	f4 e0       	ldi	r31, 0x04	; 4
+ 55e:	87 81       	ldd	r24, Z+7	; 0x07
+ 560:	80 64       	ori	r24, 0x40	; 64
+ 562:	87 83       	std	Z+7, r24	; 0x07
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 564:	2f ef       	ldi	r18, 0xFF	; 255
+ 566:	81 ee       	ldi	r24, 0xE1	; 225
+ 568:	94 e0       	ldi	r25, 0x04	; 4
+ 56a:	21 50       	subi	r18, 0x01	; 1
+ 56c:	80 40       	sbci	r24, 0x00	; 0
+ 56e:	90 40       	sbci	r25, 0x00	; 0
+ 570:	e1 f7       	brne	.-8      	; 0x56a <_Z4loopv+0x56>
+ 572:	00 c0       	rjmp	.+0      	; 0x574 <_Z4loopv+0x60>
+ 574:	00 00       	nop
+		
+	}
+
+	_delay_ms(100);
+
+}
+ 576:	2b 96       	adiw	r28, 0x0b	; 11
+ 578:	cd bf       	out	0x3d, r28	; 61
+ 57a:	de bf       	out	0x3e, r29	; 62
+ 57c:	df 91       	pop	r29
+ 57e:	cf 91       	pop	r28
+ 580:	08 95       	ret
+
+00000582 <main>:
+
+//Start
+//____________________________________________________________________________________________________
+int main(void)
+{
+	setup();
+ 582:	0e 94 53 02 	call	0x4a6	; 0x4a6 <_Z5setupv>
+		
+    while (1) 
+		loop();
+ 586:	0e 94 8a 02 	call	0x514	; 0x514 <_Z4loopv>
+ 58a:	fd cf       	rjmp	.-6      	; 0x586 <main+0x4>
+
+0000058c <__tablejump2__>:
+ 58c:	ee 0f       	add	r30, r30
+ 58e:	ff 1f       	adc	r31, r31
+ 590:	00 24       	eor	r0, r0
+ 592:	00 1c       	adc	r0, r0
+ 594:	0b be       	out	0x3b, r0	; 59
+ 596:	07 90       	elpm	r0, Z+
+ 598:	f6 91       	elpm	r31, Z
+ 59a:	e0 2d       	mov	r30, r0
+ 59c:	09 94       	ijmp
+
+0000059e <_exit>:
+ 59e:	f8 94       	cli
+
+000005a0 <__stop_program>:
+ 5a0:	ff cf       	rjmp	.-2      	; 0x5a0 <__stop_program>

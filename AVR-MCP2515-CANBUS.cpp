@@ -197,10 +197,10 @@ bool MCP2515_CAN::begin(CAN_BITRATE_t can_speed)
 	
 	//initialize the MCP2515
 	//MCP2515 starts in configuration mode. The CNF1, CNF2, CNF3, filters and masks are only configurable in this mode.
-	set_bitrate(can_speed);
+	setBitrate(can_speed);
 	
 	//start the MCP2515 by setting it in normal mode and return true if mode is set successfully
-	MCP2515_MODE_t mode = set_mode(MCP2515_MODE_NORMAL);
+	MCP2515_MODE_t mode = setMode(MCP2515_MODE_NORMAL);
 	if (mode == MCP2515_MODE_NORMAL)
 		return true;
 	

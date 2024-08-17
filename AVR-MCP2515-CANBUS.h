@@ -28,7 +28,7 @@
  * Usage:
  *		- Add both the AVR-MCP2515-CANBUS.h and AVR-MCP2515-CANBUS.cpp in your project directory
  *		- Include the header file in your main.cpp (#include "AVR-MCP2515-CANBUS.h")
- * 		- See the example can-bus-write.cpp and can-bus-read.cpp for how to use the can bus functions
+ * 		- See the example AVR128DA48-canbus-write.cpp and AVR128DA48-canbus-read.cpp for how to use the can bus functions
  *
  * Updated: 2024-08-17
  * Author: Castellated Dreams - Rein Åsmund Torsvik 
@@ -36,8 +36,8 @@
 
 
 
-#ifndef AVR-MCP2515-CANBUS_H_
-#define AVR-MCP2515-CANBUS_H_
+#ifndef AVR_MCP2515_CANBUS_H_
+#define AVR_MCP2515_CANBUS_H_
 
 // set SPI pin configuration based on chip
 //____________________________________________________________________________________________________
