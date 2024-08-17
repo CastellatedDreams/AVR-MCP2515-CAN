@@ -1,8 +1,13 @@
 /*
  * AVR128DA48-canbus-read.cpp
  *
- * Created: 26.07.2024 13:48:57
- * Author : reint
+ * This program demonstrates the use of the AVR-MCP2515-CANBUS library to read messages from the can bus
+ * The program initializes an AVR128DA48 microcontroller and configures the MCP2515 to communicate at 125kbps. 
+ * It then continuously checks for incoming CAN messages and toggles an on-board LED if a message from a 
+ * specific CAN ID (0x00AB) is received.
+ *
+ * Updated: 2024-08-17
+ * Author: Castellated Dreams - Rein Åsmund Torsvik
  */ 
 
 #define F_CPU 16000000UL // 16 MHz
@@ -56,22 +61,11 @@ void setup()
 	//CAN bus setup
 	can.begin(CAN_125kbps);
 	
-	message.id = 0x00BE;
-	message.len = 8;
-	message.data[0] = 0x01;
-	message.data[1] = 0x02;
-	message.data[2] = 0x03;
-	message.data[3] = 0x04;
-	message.data[4] = 0x05;
-	message.data[5] = 0x06;
-	message.data[6] = 0x07;
-	message.data[7] = 0x08;
-	
 	
 	
 	//setup complete
 	PORTC.OUT &= ~PIN6_bm;
-	
+
 }
 
 
@@ -79,8 +73,7 @@ void setup()
 //Main loop
 //____________________________________________________________________________________________________
 void loop()
-{
-	
+{	
 	//Check if there are any messages available in the MCP2515 buffer
 	if(can.available() > 0)
 	{
@@ -92,8 +85,6 @@ void loop()
 			PORTC.OUTTGL |= PIN6_bm;
 		
 	}
-
-	_delay_ms(100);
 
 }
 

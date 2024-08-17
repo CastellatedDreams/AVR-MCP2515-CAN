@@ -122,6 +122,12 @@ typedef struct {
 #define MCP2515_REGISTER_CANCTRL	0x0F
 #define MCP2515_REGISTER_CANSTAT	0x0E
 
+#define MCP2515_REGISTER_CANINTE	0x2B
+#define MCP2515_REGISTER_CANINTF	0x2C
+
+#define CANINTE_RX0IE_bm			0x01
+#define CANINTE_RX1IE_bm			0x02
+
 #define MCP2515_STATUS_RX0IF_bm		0x01
 #define MCP2515_STATUS_RX1IF_bm		0x02
 #define MCP2515_STATUS_TX0REQ_bm	0x04
@@ -130,6 +136,9 @@ typedef struct {
 #define MCP2515_STATUS_TX1IF_bm		0x20
 #define MCP2515_STATUS_TX2REQ_bm	0x40
 #define MCP2515_STATUS_TX2IF_bm		0x80
+
+#define MCP2515_RXSTATUS_MSGINRXB0_bm	0x40
+#define MCP2515_RXSTATUS_MSGINRXB1_bm	0x80
 
 #define CANCTRL_REQOP_NORMAL_gc		0b000 << 5
 #define CANCTRL_REQOP_SLEEP_gc		0b001 << 5
@@ -199,7 +208,7 @@ class MCP2515_CAN
 		uint8_t _spi_write(uint8_t data);
 		
 		void _mcp_reset();
-		void _mpc_write(uint8_t register_address, uint8_t data);
+		void _mcp_write(uint8_t register_address, uint8_t data);
 		uint8_t _mcp_read(uint8_t register_address);
 		
 		void _mcp_loadtxbn(uint8_t n, can_msg *msg);		//load TX buffer n

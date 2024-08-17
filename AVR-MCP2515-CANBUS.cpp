@@ -1,8 +1,8 @@
 /*
- * CD_AVR128DA48_MCP2515_CANBUS.cpp
+ * AVR_MCP2515_CANBUS.cpp
  *
- * Created: 26.07.2024 14:21:18
- *  Author: reint
+ * Updated: 2024-08-17
+ * Author: Castellated Dreams - Rein Åsmund Torsvik
  */ 
 
 #include <avr/io.h>
@@ -22,6 +22,9 @@ void MCP2515_CAN::_spi_init(PORT_t *port)
 	port->OUT		|= PIN_nSS;			//set SS pin to 1 (Slave Select off)
 					
 	port->DIRCLR	= PIN_MISO;
+	
+	//TODO:the following configurations is peobably microcontroller specific and should be updated
+	//to reflect the configuration of the ATtiny controllers
 	
 	//configure SPI peripheral
 	SPI0.CTRLA		= SPI_MASTER_bm			//set device as master
@@ -78,7 +81,7 @@ uint8_t MCP2515_CAN::_mcp_read_status()
 	return status;
 }
 
-void MCP2515_CAN::_mpc_write(uint8_t register_address, uint8_t data)
+void MCP2515_CAN::_mcp_write(uint8_t register_address, uint8_t data)
 {
 	_spi_open();
 	_spi_write(MCP2515_INSTRUCTION_WRITE);
@@ -196,10 +199,15 @@ bool MCP2515_CAN::begin(CAN_BITRATE_t can_speed)
 	_mcp_reset();
 	
 	//initialize the MCP2515
-	//MCP2515 starts in configuration mode. The CNF1, CNF2, CNF3, filters and masks are only configurable in this mode.
+	//The CNF1, CNF2, CNF3, filters and masks are only configurable in config mode.
+	setMode(MCP2515_MODE_CONFIG);
 	setBitrate(can_speed);
 	
-	//start the MCP2515 by setting it in normal mode and return true if mode is set successfully
+	//enable interrupts on the nINT pin on message reception
+	uint8_t caninte = CANINTE_RX0IE_bm | CANINTE_RX1IE_bm;
+	_mcp_write(MCP2515_REGISTER_CANINTE, caninte);
+	
+	//start the MCP2515 by setting it to normal mode. return true if mode is set successfully
 	MCP2515_MODE_t mode = setMode(MCP2515_MODE_NORMAL);
 	if (mode == MCP2515_MODE_NORMAL)
 		return true;
@@ -246,16 +254,21 @@ can_msg MCP2515_CAN::readMessage()
 	can_msg msg;
 	uint8_t* rxbn;
 	
-	//check which buffer is full an ready to read
-	uint8_t status = _mcp_read_status();
-	if (status & MCP2515_STATUS_TX0IF_bm)
+	uint8_t rxstatus = _mcp_rxstatus();
+	if (rxstatus & MCP2515_RXSTATUS_MSGINRXB0_bm)
 		rxbn = _mcp_readrxbn(0);
-	
-	else if (status & MCP2515_STATUS_TX1IF_bm)
+		
+	else if (rxstatus & MCP2515_RXSTATUS_MSGINRXB1_bm)
 		rxbn = _mcp_readrxbn(1);
 		
 	else
+	{
+		//TODO: find a better way to handle this
+		msg.id = 0x00;
+		msg.len = 0;
+		msg.data[0] = 0;
 		return msg;
+	}
 	
 	//extract the ID
 	msg.id = (rxbn[0] << 3) | ((rxbn[1] & RXBnSIDL_SID_gc) >> 5);
@@ -263,7 +276,7 @@ can_msg MCP2515_CAN::readMessage()
 	//extract data length
 	msg.len = rxbn[4] & RXBnDLC_DLC_gc;  // DLC is the lower 4 bits of frame[4]
 
-	// Extract data
+	//extract data
 	for (int i = 0; i < msg.len; i++) 
 	{
 		msg.data[i] = rxbn[5 + i];
@@ -304,7 +317,7 @@ MCP2515_MODE_t MCP2515_CAN::setMode(MCP2515_MODE_t mode)
 	}
 	
 	//write configuration
-	_mpc_write(MCP2515_REGISTER_CANCTRL, configuration);
+	_mcp_write(MCP2515_REGISTER_CANCTRL, configuration);
 	_spi_write(0);
 	
 	//check can status register to confirm mode
@@ -401,9 +414,9 @@ void MCP2515_CAN::setBitrate(CAN_BITRATE_t bitrate)
 		break;
 	}
 	
-	_mpc_write(MCP2515_REGISTER_CNF1, cnf1);
-	_mpc_write(MCP2515_REGISTER_CNF2, cnf2);
-	_mpc_write(MCP2515_REGISTER_CNF3, cnf3);
+	_mcp_write(MCP2515_REGISTER_CNF1, cnf1);
+	_mcp_write(MCP2515_REGISTER_CNF2, cnf2);
+	_mcp_write(MCP2515_REGISTER_CNF3, cnf3);
 	
 }
 

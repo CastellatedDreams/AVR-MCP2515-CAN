@@ -1,8 +1,15 @@
 /*
  * AVR128DA48-canbus-write.cpp
  *
- * Created: 26.07.2024 13:48:57
- * Author : reint
+ * This program demonstrates the use of the AVR-MCP2515-CANBUS library to send messages on the CAN bus.
+ * The program initializes an AVR128DA48 microcontroller and configures the MCP2515 to communicate at 125kbps.
+ * It then continuously sends out CAN messages with a specific CAN ID (0x00AB), modifying the message content
+ * before sending each time to simulate updating with a sensor reading. An on-board LED toggles with each message
+ * sent to indicate activity.
+ *
+ * Updated: 2024-08-17
+ * Author: Castellated Dreams - Rein Åsmund Torsvik
+
  */ 
 
 #define F_CPU 16000000UL // 16 MHz
@@ -73,7 +80,7 @@ void setup()
 	message.data[6] = 0x07;
 	message.data[7] = 0x08;
 	
-	
+
 	
 	//setup complete
 	PORTC.OUT &= ~PIN6_bm;
@@ -98,7 +105,7 @@ void loop()
 	//send message
 	can.sendMessage(&message);
 	
-	//delay 100ms before sending the next message
+	//delay 100ms before sending the next message. Toggle the on-board LED to indicate activity
 	_delay_ms(100);
 	PORTC.OUTTGL |= PIN6_bm;
 }
