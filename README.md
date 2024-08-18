@@ -10,7 +10,9 @@ Micro MCP2515 CAN bus Castellated Module
 ### Wiring
 The Curiosity Nano and the Micro MCP2515 CAN bus Module can be wired as follows.
 
-![Wiring diagram](./resources/wiring.png)
+<div style="text-align: center;">
+  <img src="./resources/wiring.png" alt="Wiring diagram" width="500"/>
+</div>
 
 ### AVR-MCP2515-CANBUS library methods
 
